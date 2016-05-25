@@ -9,8 +9,8 @@ class Shelter(models.Model):
     name = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
     phone = models.CharField(max_length=200,null=True)
-    beds_total=models.IntegerField(null=True)
-    beds_available=models.IntegerField(null=True)
+    beds_total=models.IntegerField(default=0)
+    beds_available=models.IntegerField(default=0)
     def __str__(self):
         return self.name
 

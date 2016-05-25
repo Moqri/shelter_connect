@@ -16,7 +16,6 @@ def reserve(request):
             return redirect('/')
     else:
         form = UserForm()
-    shelter_id=request.GET['shelter_id']
-    shelter=Shelter.objects.filter(id=shelter_id)
-
-    return render(request, 'reserve/reserve.html', {'form': form,'shelter':shelter})
+        shelter_id=request.GET['shelter_id']
+        shelter=Shelter.objects.filter(id=shelter_id)
+        return render(request, 'reserve/reserve.html', {'form': form,'shelter':shelter})

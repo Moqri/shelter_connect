@@ -2,7 +2,15 @@
 <ul>
 {% for shelter in shelters%}
 	<li>
-	<a href="reserve?shelter_id={{shelter.id}}">{{shelter}}</a>
+		<a href="">{{shelter}}</a>
+		<ul>
+			<li>{{shelter.address}}</li>
+			<li>{{shelter.phone}}</li>
+			<li>{{shelter.beds_total}}</li>
+			<li>{{shelter.beds_available}}</li>
+			<li><a href="reserve?shelter_id={{shelter.id}}">reserve</a>
+		</ul>
+		<hr>
 	</li>
 {% endfor %}
 </ul>
