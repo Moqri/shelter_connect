@@ -1,0 +1,8 @@
+<h1> Shelters </h1>
+<ul>
+{% for shelter in shelters%}
+	<li>
+	<a href="reserve?shelter_id={{shelter.id}}">{{shelter}}</a>
+	</li>
+{% endfor %}
+</ul>
