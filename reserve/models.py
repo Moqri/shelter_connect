@@ -21,6 +21,6 @@ class User(models.Model):
         return self.name
 
 class Reservation(models.Model):
-	name = models.CharField(max_length=200,null=True)
-	def __str__(self):
-		return self.name
+	shelter_name = models.CharField(max_length=200,null=True)
+	person_name = models.CharField(max_length=200,null=True)
+	person_phone = models.CharField(max_length=200,null=True)

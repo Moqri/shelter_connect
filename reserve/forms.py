@@ -5,7 +5,7 @@ from .models import Reservation, Shelter, User
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = ('name',)
+        fields = ('shelter_name','person_name','person_phone')
 
 class ShelterForm(forms.ModelForm):
     class Meta:

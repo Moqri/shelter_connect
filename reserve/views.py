@@ -10,15 +10,19 @@ def find_shelter(request):
 
 def reserve(request):
     shelter_id=request.GET.get('shelter_id')
+    shelter = Shelter.objects.get(pk = shelter_id)
+
     if request.method == "POST":
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
+            name= form.cleaned_data['name']
+            phone= form.cleaned_data['phone']
 
-            reservation=Reservation(name='naghi')
+
+            reservation=Reservation(shelter_name=shelter.name, person_name=name,person_phone=phone)
             reservation.save()
 
-            shelter = Shelter.objects.get(pk = shelter_id)
             shelter.beds_available-=1
             shelter.save()
 
