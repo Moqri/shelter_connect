@@ -20,7 +20,6 @@ def reserve(request):
 
             shelter = Shelter.objects.get(pk = shelter_id)
             shelter.beds_available-=1
-            print shelter.beds_available
             shelter.save()
 
             return redirect('/')
