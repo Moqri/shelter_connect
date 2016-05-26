@@ -21,8 +21,6 @@ class User(models.Model):
         return self.name
 
 class Reservation(models.Model):
-    date = models.DateTimeField(default=timezone.now)
-    shelter=models.ForeignKey(Shelter,null=True)
-    user=models.ForeignKey(User,null=True)
-    def __str__(self):
-        return '%s --- %s' % (self.shelter, self.user)
+	name = models.CharField(max_length=200,null=True)
+	def __str__(self):
+		return self.name
